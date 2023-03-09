@@ -1,0 +1,41 @@
+.Navbar_Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.Navbar_Options{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Navbar_BTN{
+    cursor: pointer;
+}
+
+.Logo{
+    width: 210px;
+    height: 70px;
+}
+
+.Links{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-color: black;
+
+}
+
+.Link_ContactUs{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(233, 184, 26);
+    padding: 10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
