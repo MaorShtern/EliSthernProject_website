@@ -11,14 +11,13 @@ export const images = {
         require("./public/images/Aclimatic4.jpg"),
         require("./public/images/Aclimatic5.jpg"),
         require("./public/images/Aclimatic6.jpg"),
-    ]
-    // Aclimatic_images: {
-    //     Aclimatic1: require("./public/images/Aclimatic1.jpg"),
-    // Aclimatic2: require("./public/images/Aclimatic2.jpg"),
-    // Aclimatic3: require("./public/images/Aclimatic3.jpg"),
-    // Aclimatic4: require("./public/images/Aclimatic4.jpg"),
-    // Aclimatic5: require("./public/images/Aclimatic5.jpg"),
-    // Aclimatic6: require("./public/images/Aclimatic6.jpg"),
-    // }
+    ],
+    Fotter_image : require("./public/images/Fotter_image.jpeg"),
+    Industrial_Construction_image: require("./public/images/Industrial_Construction.jpg"),
+    Private_Construction_image: require("./public/images/Private_Construction.jpg"),
+    Import_Of_Steel_Products_image: require("./public/images/Import_Of_Steel_Products.jpg"),
+    Advanced_construction_image: require("./public/images/Advanced_construction.jpg"),
+    x_icon: require("./public/images/x_icon.png"),
+    Hamburger_icon: require("./public/images/Hamburger_icon.png"),
 
 }

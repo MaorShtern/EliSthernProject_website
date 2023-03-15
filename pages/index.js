@@ -8,7 +8,7 @@ export default function Home() {
         <title>דף הבית - אלי שטרן פרוייקטים</title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-        <div>
+        <div >
           <HomePage/>
         </div>
       </div>
