@@ -1,17 +1,9 @@
 
-.homePage_image {
-  /* width: 99.4vw;
-  height: 500px; */
-
-  /* position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-  width: 99.4vw;
-  height: 500px; */
+.homePage_image{
+  width: 100%;
+  height: fit-content;
 }
+
 
 .container {
   min-height: 100vh;

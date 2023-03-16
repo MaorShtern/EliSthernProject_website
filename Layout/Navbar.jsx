@@ -1,42 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from '../styles/NavbarStyle.module.css'
 import { images } from '../images'
 import Image from 'next/image'
 import Link from 'next/link'
-import { blue, Button } from "@nextui-org/react";
-
+import AppContext from '../AppContext'
 
 export default function Navbar() {
 
-    const [size, setTemp] = useState({
-        width: undefined,
-        minWidth: 900,
-        isSmall: false,
-    })
+    const size = useContext(AppContext);
     const [menuFlag, setMenuFlag] = useState(true)
-
-
-    const handleResize = () => {
-        setTemp({
-            width: window.innerWidth,
-            isSmall: size.minWidth >= window.innerWidth ? true : false
-        });
-    }
-
-
-    useEffect(() => {
-        window.addEventListener("resize", handleResize);
-        handleResize()
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-
 
     const Main_Menu_Layout = () => {
         return (
             <>
                 <div className={styles.Navbar_Container}>
-
                     <div className={styles.Navbar_Options}>
                         <ul className={styles.menuList}>
                             <li><Link className={styles.Links} href='/Com/ContactUs'>צור קשר</Link></li>
@@ -101,7 +78,7 @@ export default function Navbar() {
                                     </div>
 
                                     <div className={styles.Menu_Options_Container}>
-                                    <li className={styles.Menu_Options}>
+                                        <li className={styles.Menu_Options}>
                                             <Link className={styles.Links}
                                                 onClick={() => setMenuFlag(true)}
                                                 href='/'>דף הבית</Link>
@@ -116,7 +93,7 @@ export default function Navbar() {
                                                 onClick={() => setMenuFlag(true)}
                                                 href='/Com/Projects'>פרוייקטים</Link>
                                         </li>
-                                
+
                                         <li className={styles.Menu_Options}>
                                             <Link className={styles.Links}
                                                 onClick={() => setMenuFlag(true)}
@@ -136,7 +113,7 @@ export default function Navbar() {
         )
     }
 
-
+    // return (<Main_Menu_Layout />)
 
     if (!size.isSmall)
         return (<Main_Menu_Layout />)

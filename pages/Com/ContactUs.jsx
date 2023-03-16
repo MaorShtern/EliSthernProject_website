@@ -1,7 +1,7 @@
-import React from 'react'
-import Navbar from '../../Layout/Navbar'
+import React, { useContext } from 'react'
 
 export default function ContactUs() {
+
   return (
     <div>ContactUs</div>
   )
@@ -11,8 +11,7 @@ export default function ContactUs() {
 ContactUs.getLayout = function PageLayout(page) {
   return (
     <>
-      <Navbar />
-      {page}
+        {page} 
     </>
   )
 }

@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { images } from '../../images'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from "@nextui-org/react";
 import styles from '../../styles/Home.module.css'
-// import AreasOfWork_Home_Card from './Cards_layout/AreasOfWork_Home_Card';
-
+import { Button } from '@chakra-ui/react'
+import AppContext from '../../AppContext';
 
 export const AreasOfWork_Data = [
     {
@@ -40,23 +39,21 @@ export const AreasOfWork_Data = [
 
 
 
-// let list = AreasOfWork_Data.map((object, index) =>
-//     <AreasOfWork_Home_Card key={index} object={object} />)
-
-
 
 export default function HomePage() {
+    // const size = useContext(AppContext);
+    // console.log(size);
+
 
     return (
         <div>
-            {/* <div >
+            <div >
                 <Image
                     className={styles.homePage_image}
                     src={images.homePage_image}
                     priority
                     alt="" />
-            </div > */}
-
+            </div >
 
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: -30 }}>
@@ -64,15 +61,15 @@ export default function HomePage() {
                     <p style={{ fontSize: 50 }}>אנחנו בונים את העתיד</p>
                     <p style={{ fontSize: 20, marginTop: -30 }}>כל פרויקט בניה קטן כגדול דורש שילוב של אלמנטים רבים ושונים (עיצוב, תכנון, בחירת חומרים, ביצוע, מים, חשמל ועוד..) הצלחת הפרויקט תלויה רבות ביכולת הראיה הכוללת והטמעתה האופטימלית בשילוב כל האלמנטים השונים. אנו נותנים מענה מלא תחת גג אחד ונהפוך כל אלו ליצירה אחת מושלמת.</p>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
+
                         <Link style={{ textDecoration: 'none' }} href='/Com/Projects'>
-                            <Button color="warning" auto >
+                            <Button style={{cursor:"pointer"}} colorScheme='teal' variant='solid'>
                                 צפה בפרוייקטים
                             </Button>
                         </Link>
                     </div>
                 </div>
             </div>
-
 
 
         </div>

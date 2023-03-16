@@ -2,6 +2,10 @@ import Head from 'next/head';
 import HomePage from './Com/HomePage';
 
 export default function Home() {
+
+  // console.log(size);
+  
+
   return (
     <div >
       <Head>
@@ -9,7 +13,7 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
         <div >
-          <HomePage/>
+          <HomePage />
         </div>
       </div>
   )
