@@ -15,6 +15,7 @@ export default async function handler(req, res) {
             <h1>שם הלקוח: ${body.name}</h1>
             <h3>מספר טלפון ${body.phone}</h3>
             <h3>מייל: ${body.email}</h3>
+            <p>${body.notes}</p>
         </div>`
         })
         res.status(200).json()

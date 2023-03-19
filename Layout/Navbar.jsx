@@ -5,6 +5,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AppContext from '../AppContext'
 
+
+
+const Array_Options = [
+    {
+        text: 'צור קשר',
+        link: "/Com/ContactUs"
+    },
+    {
+        text: 'אודות',
+        link: "/Com/About"
+    },
+    {
+        text: 'תחומי עניין',
+        link: "/Com/AreasOfExpertise"
+    },
+    {
+        text: 'פרוייקטים',
+        link: "/Com/Projects"
+    },
+    {
+        text: 'דף הבית',
+        link: "/"
+    },
+]
+
+
+
 export default function Navbar() {
 
     const size = useContext(AppContext);
@@ -16,11 +43,12 @@ export default function Navbar() {
                 <div className={styles.Navbar_Container}>
                     <div className={styles.Navbar_Options}>
                         <ul className={styles.menuList}>
-                            <li><Link className={styles.Links} href='/Com/ContactUs'>צור קשר</Link></li>
-                            <li><Link className={styles.Links} href="/Com/About">אודות</Link></li>
-                            <li><Link className={styles.Links} href='/Com/AreasOfExpertise'>תחומי עניין</Link></li>
-                            <li> <Link className={styles.Links} href='/Com/Projects'>פרוייקטים</Link></li>
-                            <li><Link className={styles.Links} href='/'>דף הבית</Link> </li>
+                            {Array_Options.map((option, index) =>
+                                <li key={index}>
+                                    <Link className={styles.Links} href={`${option.link}`}
+                                    >{option.text}</Link>
+                                </li>)
+                            }
                         </ul>
                     </div>
                     <div>
@@ -39,11 +67,13 @@ export default function Navbar() {
     const Menu_Options_Layout = () => {
         return (
             <>
-                <div>
-                    <div>
+                <div >
+                    <div >
                         {
                             menuFlag ? (
-                                <div className={styles.Navbar_Container}>
+                                <div
+                                    className={styles.Navbar_Container}
+                                >
                                     <div>
                                         <Image className={styles.menu_icon}
                                             src={images.Hamburger_icon} alt=''
@@ -77,33 +107,19 @@ export default function Navbar() {
                                         </div>
                                     </div>
 
-                                    <div className={styles.Menu_Options_Container}>
-                                        <li className={styles.Menu_Options}>
-                                            <Link className={styles.Links}
-                                                onClick={() => setMenuFlag(true)}
-                                                href='/'>דף הבית</Link>
-                                        </li>
-                                        <li className={styles.Menu_Options}>
-                                            <Link className={styles.Links}
-                                                onClick={() => setMenuFlag(true)}
-                                                href='/Com/AreasOfExpertise'>תחומי עניין</Link>
-                                        </li>
-                                        <li className={styles.Menu_Options}>
-                                            <Link className={styles.Links}
-                                                onClick={() => setMenuFlag(true)}
-                                                href='/Com/Projects'>פרוייקטים</Link>
-                                        </li>
-
-                                        <li className={styles.Menu_Options}>
-                                            <Link className={styles.Links}
-                                                onClick={() => setMenuFlag(true)}
-                                                href='/Com/About'>אודות</Link>
-                                        </li>
-                                        <li className={styles.Menu_Options}>
-                                            <Link className={styles.Links}
-                                                onClick={() => setMenuFlag(true)}
-                                                href='/Com/ContactUs'>צור קשר</Link>
-                                        </li>
+                                    <div>
+                                        <ul className={styles.Menu_Options_Container}>
+                                            {Array_Options.map((option, index) =>
+                                                <li key={index}
+                                                    className={styles.Menu_Options}>
+                                                    <Link
+                                                        href={`${option.link}`}
+                                                        className={styles.Links}
+                                                        onClick={() => setMenuFlag(true)}
+                                                    >{option.text}</Link>
+                                                </li>)
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
                             )}

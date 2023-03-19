@@ -14,7 +14,7 @@ export default function Footer() {
         name: "bsfbsfb",
         phone: "sfbsfbsb",
         email: "sfbfbsfb",
-        notes:""
+        notes: ""
     })
 
 
@@ -28,9 +28,7 @@ export default function Footer() {
             alert("המייל נשלח בהצלחה");
         else
             alert("error");
-
         setButtonLoading(false)
-
     }
 
 
@@ -70,8 +68,6 @@ export default function Footer() {
 
                     <div className={styles.Form_Container}>
 
-                        {/* {flexDirection:'column', dir:'rtl'}} */}
-
                         <form className={!size.isSmall ? styles.Form : styles.small_Form}>
                             <input className={styles.Inputs} type='text' placeholder='שם מלא'
                                 onChange={(e) => contact.name = e.target.value}
@@ -83,15 +79,21 @@ export default function Footer() {
                                 onChange={(e) => contact.email = e.target.value}
                             />
                         </form>
-            
+                        <div style={{display:'flex', justifyContent:'right'}}>
+                            <textarea
+                                style={{ width: '100%', direction:'rtl' }}
+                                name="postContent"
+                                placeholder="*הערות נוספות*"
+                                rows={4}
+                                cols={40}
+                                onChange={(e) => contact.notes = e.target.value}
+                            />
+                        </div>
                         <Button
                             className={styles.Sub_Btn}
                             onClick={() => Check_Contact_Details()}
                             isLoading={buttonLoading}
-                        >
-                            שליחה
-                        </Button>
-
+                        >שליחה</Button>
 
 
                     </div>
@@ -112,7 +114,7 @@ export default function Footer() {
                 </div>
 
 
-          
+
             </div>
         </>
     )

@@ -41,6 +41,8 @@ export const AreasOfWork_Data = [
 
 
 
+
+
 export default function HomePage() {
     // const size = useContext(AppContext);
     // console.log(size);
@@ -48,13 +50,13 @@ export default function HomePage() {
 
     return (
         <div>
-            {/* <div >
+            <div >
                 <Image
                     className={styles.homePage_image}
                     src={images.homePage_image}
                     priority
                     alt="" />
-            </div > */}
+            </div >
 
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: -30 }}>
@@ -64,7 +66,7 @@ export default function HomePage() {
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
 
                         <Link style={{ textDecoration: 'none' }} href='/Com/Projects'>
-                            <Button style={{cursor:"pointer"}} colorScheme='teal' variant='solid'>
+                            <Button style={{ cursor: "pointer" }} colorScheme='teal' variant='solid'>
                                 צפה בפרוייקטים
                             </Button>
                         </Link>

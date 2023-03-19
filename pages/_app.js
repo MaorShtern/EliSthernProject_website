@@ -44,9 +44,7 @@ export default function MyApp({Component, pageProps}){
     < >
         <AppContext.Provider value={size}>
             <Navbar  />
-            <main>
                 <Component {...pageProps } />
-                </main>
             <Footer />
         </AppContext.Provider>
     </>

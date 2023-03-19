@@ -1,16 +1,11 @@
 .Navbar_Container{
-    border-bottom: 1px solid gainsboro;
-    background-color: white;
-    height: 110px;
-    position: sticky;
-    top: 0;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-
+    background-color: rgb(234, 231, 231);
 }
-
 
 
 .Navbar_Options{
@@ -18,8 +13,7 @@
     justify-content: right;
     font-size: x-large;
     width: 90%;
-    margin-right: 20px;
-    /* background-color: aqua; */
+    /* margin-right: 20px; */
 }
 
 .Navbar_BTN{
@@ -29,15 +23,13 @@
 .Logo{
     width: 210px;
     height: 70px;
-    /* padding: 20px; */
-    
 }
 
 .menuList {
     list-style-type: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 
@@ -59,23 +51,23 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
-    /* background-color: blue; */
 }
+
+
 
 .Menu_Options_Container{
     background-color:rgb(187, 187, 183);
     text-align: right;
-    margin-right: -50vw;
-    margin-left: -10px;
-    width: 99.4vw;
-     position: relative;
-     list-style-type: none;
+    /* width: 100%; */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .Menu_Options{
     border-style: solid;
     border-width: 0.2px;
-    border-color: rgb(104, 103, 103);
+    background-color: rgb(170, 169, 169);
     padding: 10px;
     font-size: 20px;
 }
