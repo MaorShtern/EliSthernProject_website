@@ -4,7 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import { Button } from '@chakra-ui/react'
-import AppContext from '../../AppContext';
+
+
 
 export const AreasOfWork_Data = [
     {
@@ -47,13 +48,13 @@ export default function HomePage() {
 
     return (
         <div>
-            <div >
+            {/* <div >
                 <Image
                     className={styles.homePage_image}
                     src={images.homePage_image}
                     priority
                     alt="" />
-            </div >
+            </div > */}
 
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: -30 }}>

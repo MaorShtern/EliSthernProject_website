@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from '../styles/FotterStyle.module.css'
 import AppContext from '../AppContext'
 import { Button } from '@chakra-ui/react'
+import Email from '../pages/api/Email'
 
 
 export default function Footer() {
@@ -10,10 +11,28 @@ export default function Footer() {
     const size = useContext(AppContext)
     const [buttonLoading, setButtonLoading] = useState(false)
     const [contact, setContact] = useState({
-        name: "",
-        phone: "",
-        email: ""
+        name: "bsfbsfb",
+        phone: "sfbsfbsb",
+        email: "sfbfbsfb",
+        notes:""
     })
+
+
+
+    ///  יש לדבר אם אבא על מנת שיתן לי גישה לחשבון של העסק על ולבדוק אם זה עובד
+    ///  יש להציג חלונית אשר מאשר שהמייל נשלח בהצלחה
+    const Send_Email = async () => {
+        setButtonLoading(true)
+        let text = await Email(contact)
+        if (text === 200)
+            alert("המייל נשלח בהצלחה");
+        else
+            alert("error");
+
+        setButtonLoading(false)
+
+    }
+
 
     const Check_Contact_Details = () => {
         // console.log("contact: " + JSON.stringify(contact));
@@ -30,7 +49,7 @@ export default function Footer() {
             alert("נא למלא כתובת אימייל עם הסיומת @gmail.com")
             return
         }
-        setButtonLoading(true)
+        Send_Email()
     }
 
 
@@ -51,9 +70,9 @@ export default function Footer() {
 
                     <div className={styles.Form_Container}>
 
-                    {/* {flexDirection:'column', dir:'rtl'}} */}
+                        {/* {flexDirection:'column', dir:'rtl'}} */}
 
-                        <form className={!size.isSmall ?  styles.Form : styles.small_Form }>
+                        <form className={!size.isSmall ? styles.Form : styles.small_Form}>
                             <input className={styles.Inputs} type='text' placeholder='שם מלא'
                                 onChange={(e) => contact.name = e.target.value}
                             />
@@ -64,6 +83,7 @@ export default function Footer() {
                                 onChange={(e) => contact.email = e.target.value}
                             />
                         </form>
+            
                         <Button
                             className={styles.Sub_Btn}
                             onClick={() => Check_Contact_Details()}
@@ -75,8 +95,8 @@ export default function Footer() {
 
 
                     </div>
-                    <div className={!size.isSmall ? styles.Contacts_Container : {flexDirection:'column',padding: 120}}>
-                        <div style={{ display: 'flex', flexDirection: 'column',textAlign: 'center' }}>
+                    <div className={!size.isSmall ? styles.Contacts_Container : { flexDirection: 'column', padding: 120 }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                             <a style={{ fontSize: '300%' }}>Address</a>
                             <a style={{ fontSize: '150%' }}>עין שמר</a>
                         </div>
@@ -90,6 +110,9 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+
+
+          
             </div>
         </>
     )
