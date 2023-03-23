@@ -6,7 +6,32 @@
 }
 
 
+.Images_Con{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
 
+.Image_Segment{
+  width: '34%';
+  max-width: 100%;
+  position: relative;
+}
+
+.Image{
+  height: 100%;
+  width: 100%;
+}
+
+.Text{
+  color: white;
+  font-size:40px;
+  text-align: right;
+  position: absolute;
+  right: 10%;
+  bottom: 15%;
+  top: -5%;
+}
 
 
 .container {

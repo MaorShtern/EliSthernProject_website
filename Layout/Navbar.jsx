@@ -4,7 +4,7 @@ import { images } from '../images'
 import Image from 'next/image'
 import Link from 'next/link'
 import AppContext from '../AppContext'
-
+import { motion } from "framer-motion"
 
 
 const Array_Options = [
@@ -35,7 +35,7 @@ const Array_Options = [
 export default function Navbar() {
 
     const size = useContext(AppContext);
-    const [menuFlag, setMenuFlag] = useState(true)
+    const [menuFlag, setMenuFlag] = useState(false)
 
     const Main_Menu_Layout = () => {
         return (
@@ -67,63 +67,51 @@ export default function Navbar() {
     const Menu_Options_Layout = () => {
         return (
             <>
-                <div >
-                    <div >
-                        {
-                            menuFlag ? (
-                                <div
-                                    className={styles.Navbar_Container}
-                                >
-                                    <div>
-                                        <Image className={styles.menu_icon}
-                                            src={images.Hamburger_icon} alt=''
-                                            onClick={() => setMenuFlag(!menuFlag)}
-                                        />
-                                    </div>
-                                    <div>
-                                        <Link className={styles.Links} href='/'>
-                                            <div className={styles.Navbar_Logo}>
-                                                <Image className={styles.Logo} src={images.logo} alt="logo" />
-                                            </div>
-                                        </Link>
-                                    </div>
+                <div>
+                    <div className={styles.Navbar_Container}>
+                        <motion.div
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 1.1 }}
+                        >
+                            <div>
+                                <Image className={styles.menu_icon}
+                                    src={menuFlag ? images.x_icon : images.Hamburger_icon}
+                                    alt=""
+                                    onClick={() => setMenuFlag(!menuFlag)}
+                                />
+                            </div>
+                        </motion.div>
+                        <div>
+                            <Link className={styles.Links} href='/'>
+                                <div className={styles.Navbar_Logo}>
+                                    <Image className={styles.Logo} src={images.logo} alt="logo" />
                                 </div>
-                            ) : (
-                                <div>
-                                    <div className={styles.Navbar_Container}>
-                                        <div>
-                                            <Image
-                                                className={styles.menu_icon}
-                                                src={images.x_icon} alt=''
-                                                onClick={() => setMenuFlag(!menuFlag)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <Link className={styles.Links} href='/'>
-                                                <div className={styles.Navbar_Logo}>
-                                                    <Image className={styles.Logo} src={images.logo} priority alt="logo" />
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <ul className={styles.Menu_Options_Container}>
-                                            {Array_Options.map((option, index) =>
-                                                <li key={index}
-                                                    className={styles.Menu_Options}>
-                                                    <Link
-                                                        href={`${option.link}`}
-                                                        className={styles.Links}
-                                                        onClick={() => setMenuFlag(true)}
-                                                    >{option.text}</Link>
-                                                </li>)
-                                            }
-                                        </ul>
-                                    </div>
-                                </div>
-                            )}
+                            </Link>
+                        </div>
                     </div>
+                    {menuFlag ? (
+                        <motion.div
+                        style={{marginTop:-14}}
+                            initial={{ opacity: 0, y: 0 }}
+                            animate={{ opacity: 1, y: 15 }}
+                            // transition={{
+                            //     delay: 0.1,
+                            //     duration: 0.5
+                            // }}
+                            >
+                            <ul className={styles.Menu_Options_Container}>
+                                {Array_Options.map((option, index) =>
+                                    <li key={index}
+                                        className={styles.Menu_Options}>
+                                        <Link
+                                            href={`${option.link}`}
+                                            className={styles.Links}
+                                            onClick={() => setMenuFlag(false)}
+                                        >{option.text}</Link>
+                                    </li>)
+                                }
+                            </ul>
+                        </motion.div>) : null}
                 </div>
             </>
         )

@@ -19,5 +19,7 @@ export const images = {
     Advanced_construction_image: require("./public/images/Advanced_construction.jpg"),
     x_icon: require("./public/images/x_icon.png"),
     Hamburger_icon: require("./public/images/Hamburger_icon.png"),
+    facebook_icon: require("./public/images/facebook_icon.png"),
+    gmail_icon: require("./public/images/Gmail_icon.png"),
 
 }

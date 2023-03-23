@@ -1,0 +1,23 @@
+.ContactUs_Con{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 5%;
+    background-color:rgb(187, 187, 183);
+
+}
+
+.Contact_File{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(190, 193, 193);
+}
+
+.Con_Detailes{
+    text-align: center;
+    width: 100%;    
+    background-color: rgb(190, 193, 193);
+
+
+}
