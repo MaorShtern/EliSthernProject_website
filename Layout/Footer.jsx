@@ -11,9 +11,9 @@ export default function Footer() {
     const size = useContext(AppContext)
     const [buttonLoading, setButtonLoading] = useState(false)
     const [contact, setContact] = useState({
-        name: "bsfbsfb",
-        phone: "sfbsfbsb",
-        email: "sfbfbsfb",
+        name: "",
+        phone: "",
+        email: "",
         notes: ""
     })
 

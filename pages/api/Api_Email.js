@@ -15,6 +15,10 @@ export default async function handler(req, res) {
             <h1>שם הלקוח: ${body.name}</h1>
             <h3>מספר טלפון ${body.phone}</h3>
             <h3>מייל: ${body.email}</h3>
+            ${body.subject !== undefined ? (
+                `<h3>נושא: ${body.subject}</h3>
+                <h3>סוג הפרוייקט: ${body.projectThem}</h3>`
+            ) : null}
             <p>${body.notes}</p>
         </div>`
         })

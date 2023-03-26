@@ -4,7 +4,6 @@ import HomePage from './Com/HomePage';
 export default function Home() {
 
   // console.log(size);
-  
 
   return (
     <div >
