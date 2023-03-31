@@ -10,10 +10,10 @@
 
 .Navbar_Options{
     display: flex;
+    /* justify-content: space-between; */
     justify-content: right;
     font-size: x-large;
     width: 90%;
-    /* margin-right: 20px; */
 }
 
 .Navbar_BTN{
@@ -28,6 +28,7 @@
 .menuList {
     list-style-type: none;
     display: flex;
+    
     /* margin: 0;
     padding: 0; */
 }

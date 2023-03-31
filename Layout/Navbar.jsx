@@ -37,20 +37,27 @@ export default function Navbar() {
     const size = useContext(AppContext);
     const [menuFlag, setMenuFlag] = useState(false)
 
+
+
+
     const Main_Menu_Layout = () => {
         return (
             <>
                 <div className={styles.Navbar_Container}>
+
                     <div className={styles.Navbar_Options}>
                         <ul className={styles.menuList}>
                             {Array_Options.map((option, index) =>
-                                <li key={index}>
-                                    <Link className={styles.Links} href={`${option.link}`}
-                                    >{option.text}</Link>
-                                </li>)
+                                    <li key={index}>
+                                        <Link className={styles.Links} href={`${option.link}`}
+                                        >{option.text}</Link>
+                                    </li>
+                            )
                             }
                         </ul>
                     </div>
+
+
                     <div>
                         <Link href='/'>
                             <div >
@@ -91,14 +98,14 @@ export default function Navbar() {
                     </div>
                     {menuFlag ? (
                         <motion.div
-                        style={{marginTop:-14}}
+                            style={{ marginTop: -14 }}
                             initial={{ opacity: 0, y: 0 }}
                             animate={{ opacity: 1, y: 15 }}
-                            // transition={{
-                            //     delay: 0.1,
-                            //     duration: 0.5
-                            // }}
-                            >
+                        // transition={{
+                        //     delay: 0.1,
+                        //     duration: 0.5
+                        // }}
+                        >
                             <ul className={styles.Menu_Options_Container}>
                                 {Array_Options.map((option, index) =>
                                     <li key={index}

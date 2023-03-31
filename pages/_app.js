@@ -3,6 +3,7 @@ import Footer from "../Layout/Footer"
 import React, { useEffect, useState } from 'react'
 import AppContext from "../AppContext"
 import '../styles/styles.css'
+import Head from 'next/head';
 
 
 export default function MyApp({Component, pageProps}){
@@ -34,6 +35,9 @@ export default function MyApp({Component, pageProps}){
     if(Component.getLayout){
         return Component.getLayout(
             <AppContext.Provider value={size}>
+                <Head>
+                    <link rel="shortcut icon" href="/logo.ico" />
+                </Head>  
                 <Navbar />
                 <Component {...pageProps}/>
             </AppContext.Provider>
@@ -42,7 +46,10 @@ export default function MyApp({Component, pageProps}){
 
     return (
     < >
-        <AppContext.Provider value={size}>
+        <AppContext.Provider value={size}>   
+        <Head>
+        <link rel="shortcut icon" href="/logo.ico" />
+      </Head>   
             <Navbar  />
                 <Component {...pageProps } />
             <Footer />

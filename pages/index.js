@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import HomePage from './Com/HomePage';
+import {images} from '../images'
 
 export default function Home() {
 
@@ -7,10 +8,10 @@ export default function Home() {
 
   return (
     <div >
-      <Head>
+      {/* <Head>
         <title>דף הבית - אלי שטרן פרוייקטים</title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-      </Head>
+        <link rel="shortcut icon" href="/logo.ico" />
+      </Head> */}
         <div >
           <HomePage />
         </div>
