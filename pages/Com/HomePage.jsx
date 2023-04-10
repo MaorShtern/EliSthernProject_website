@@ -15,7 +15,6 @@ export default function HomePage() {
             </Head>
             <div >
                 <Image
-                    // className={styles.homePage_image}
                     style={{ width: '100%' }}
                     src={images.homePage_image}
                     priority

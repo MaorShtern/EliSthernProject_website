@@ -97,15 +97,15 @@ export default function Navbar() {
                         </div>
                     </div>
                     {menuFlag ? (
-                        <motion.div
-                            style={{ marginTop: -14 }}
-                            initial={{ opacity: 0, y: 0 }}
-                            animate={{ opacity: 1, y: 15 }}
-                        // transition={{
-                        //     delay: 0.1,
-                        //     duration: 0.5
-                        // }}
-                        >
+                        // <motion.div
+                        //     style={{ marginTop: -14 }}
+                        //     initial={{ opacity: 0, y: 0 }}
+                        //     animate={{ opacity: 1, y: 15 }}
+                        // // transition={{
+                        // //     delay: 0.1,
+                        // //     duration: 0.5
+                        // // }}
+                        // >
                             <ul className={styles.Menu_Options_Container}>
                                 {Array_Options.map((option, index) =>
                                     <li key={index}
@@ -118,7 +118,8 @@ export default function Navbar() {
                                     </li>)
                                 }
                             </ul>
-                        </motion.div>) : null}
+                        // </motion.div>
+                        ) : null}
                 </div>
             </>
         )

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../../styles/Com_Styles/ProjectsStyles.module.css'
 import Head from 'next/head';
-import Progects_Cards from './cards/Progects_Cards';
+import Projects_Cards from './cards/Projects_Cards'
+
+
 
 const projects_Category = [
     {
@@ -24,65 +26,52 @@ const projects_Category = [
 ]
 
 
-const projects_Data = [
-    {
-        name: "מבנה חנויות ומשרדים קרית גת",
-        category: "Industrial_Construction",
-    },
-    {
-        name: "מפעל עיבוד שבבי בית שאן",
-        category: "Industrial_Construction",
-    },
-    {
-        name: "מפעל אקלמטיק – ציפורית",
-        category: "Industrial_Construction",
-    },
-    {
-        name: "מרלו\"ג נעורים – חברת אלקטריאון",
-        category: "Industrial_Construction",
-    },
-    {
-        name: "חיזוק מנהרת דחיקה – חברת חשמל",
-        category: "Import_Of_Steel"
-    },
-    {
-        name: "סתם בית בשכונה",
-        category: "Private_Construction"
-    },
 
-]
-
-export default function Projects() {
+export default function Projects({ data }) {
 
     const router = useRouter()
     const [category, setCategory] = useState(projects_Category[0])
 
+
+    // console.log(data);
+
     useEffect(() => {
         let data = router.query.title;
-        // console.log(data);
         if (data !== undefined)
             setCategory(projects_Category.filter((item) => data === item.key)[0])
     }, [])
 
 
-    const Progects_Cards_Layout = () => {
+
+
+    const progects_Cards_Layout = () => {
         return (
             <>
+                <div className={styles.progects_Cards_Con}>
+                    <div className={styles.row}>
+                        {
+                            category === projects_Category[0] ?
+                                data.map((item, index) =>
+                                (
+                                    <div key={index} className={styles.column} >
+                                        <Projects_Cards key={index} data={item} />
+                                    </div>
+                                )) :
+                                data.filter((item) => item.category === category.key).map(
+                                    (item, index) =>
+                                    (
+                                        <div key={index} className={styles.column} >
+                                            <Projects_Cards key={index} data={item} />
+                                        </div>
+                                    )
+                                )
+                        }
+                    </div>
+                </div>
             </>
         )
     }
 
-    // console.log("category: " + category.key);
-
-    let progects_Cards_Layout = category === projects_Category[0] ? 
-    projects_Data.map((item, index) => <Progects_Cards key={index} data={item} />):
-    projects_Data.map((item, index) => <Progects_Cards key={index} data={item} />
-    )    
-
-    // let progects_Cards_Layout = projects_Data.map((item, index) =>
-    //     category === projects_Category[0] ? <Progects_Cards key={index} data={item} />
-    //     : 
-    // )
 
 
     return (
@@ -113,14 +102,20 @@ export default function Projects() {
                 </div>
 
                 <div>
-                    {progects_Cards_Layout}
+                    {progects_Cards_Layout()}
                 </div>
-                
+
             </div>
         </>
     )
 }
 
 
-
+export async function getStaticProps() {
+    let res = await fetch('http://localhost:3000/api/Api_Projects_Data', { method: 'GET' })
+    let data = await res.json()
+    return {
+        props: { data },
+    }
+}
 

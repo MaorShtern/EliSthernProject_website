@@ -59,7 +59,7 @@ export default function Footer() {
                     <div style={{ maxWidth: '100%', display: 'flex', textAlign: 'center' }}>
                         <div style={{ width: '25%' }}></div>
                         <div style={{ width: '50%' }}>
-                            <h1 style={{ fontSize: 40, direction:'rtl' }}>יש לכם פרויקט לביצוע?</h1>
+                            <h1 style={{ fontSize: 40, direction: 'rtl' }}>יש לכם פרויקט לביצוע?</h1>
                             <p style={{ fontSize: 22 }} >לאלי שטרן פרויקטים יש את הידע, הכלים והניסיון להוציא את הפרוייקט לפועל על הצד הטוב ביותר פנו אלינו עוד היום לקבלת פרטים נוספים</p>
                         </div>
                         <div style={{ width: '25%' }}></div>
@@ -79,9 +79,9 @@ export default function Footer() {
                                 onChange={(e) => contact.email = e.target.value}
                             />
                         </form>
-                        <div style={{display:'flex', justifyContent:'right'}}>
+                        <div style={{ display: 'flex', justifyContent: 'right' }}>
                             <textarea
-                                style={{ width: '100%', direction:'rtl' }}
+                                style={{ width: '100%', direction: 'rtl' }}
                                 name="postContent"
                                 placeholder="*הערות נוספות*"
                                 rows={4}
@@ -111,6 +111,11 @@ export default function Footer() {
                             <a style={{ fontSize: '150%' }}>0525407098</a>
                         </div>
                     </div>
+
+                    <div style={{  textAlign: 'center', direction: 'rtl', padding: 20, }}>
+                        <p>כול הזכויות שמורות לאלי שטרן פרויקטים, ביצוע ניהול ופיקוח ©2023</p>
+                    </div>
+
                 </div>
 
 

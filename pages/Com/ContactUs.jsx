@@ -64,16 +64,6 @@ export default function ContactUs() {
 
 
 
-  // const Divaider = () => {
-  //   return (
-  //     <>
-  //       <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 15, marginBottom: 15, color: 'blue' }}>
-  //         ---------------------------------------------------------------------------------------------------------------
-  //       </div>
-  //     </>
-  //   )
-  // }
-
 
 
   return (
@@ -163,12 +153,30 @@ export default function ContactUs() {
           </div>
           <div style={{ height: 1, backgroundColor: 'blue', margin: 15 }} ></div>
 
-          <div style={{ backgroundColor: 'blue', width: '95%', height: '50%', marginLeft: '2.5%' }}>
-            נוסיף תמונה או של המיקום על גוגל מאפס או לא יודע מה
+          <div >
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2810.380743270923!2d34.99869135219835!3d32.4635118758025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0fb5a847b6f5%3A0xa3a6a6a163756fab!2z15TXl9ec15XXpteZ150gMTkzNCwg15LXnyDXlNep15XXnteo15XXnw!5e0!3m2!1siw!2sil!4v1681140067308!5m2!1siw!2sil"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{width:'100%', borderStyle:'none', height:400}}
+              >
+            </iframe>
+
           </div>
-
-
         </div>
+      </div>
+
+      <div style={{
+        textAlign: 'center',
+        direction: 'rtl',
+        backgroundColor: 'rgb(187, 187, 183)',
+        padding: 20,
+        marginTop: '-2.5%'
+      }}
+      >
+        <p>כול הזכויות שמורות לאלי שטרן פרויקטים, ביצוע ניהול ופיקוח ©2023</p>
       </div>
     </>
   )
