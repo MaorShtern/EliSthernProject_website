@@ -2,6 +2,7 @@ import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
+import Styles from '../../styles/Cards_Styles/Project_Page_Styles.module.css'
 
 
 export default function project({ project }) {
@@ -9,28 +10,28 @@ export default function project({ project }) {
 
   // console.log(project.images);
 
+
   return (
-    <div style={{ margin: 10}}>
+    <div style={{ margin: 10 }}>
       <div style={{ textAlign: 'center', marginTop: 50 }}>
-        <h1>{project.title}</h1>
-        <p></p>
+        <h1><ins>{project.title}</ins></h1>
       </div>
 
 
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <div style={{ width:'70%'}}>
-          <Carousel  showThumbs={false}>
+      <div style={{ display: 'flex', flexDirection: 'row', }}>
+        <div style={{ width: '60%' }}>
+          <Carousel showThumbs={false}>
             {
               project.images.map((image, index) => (
                 <div key={index}>
-                  <Image style={{ width: '100%', height: 600 }} src={image} alt='' />
+                  <Image style={{ width: '100%', height: 600 }} src={image} alt='' priority />
                 </div>
               ))
             }
           </Carousel>
         </div>
-        <div style={{width:'30%', backgroundColor:'red'}}>
-          text
+        <div style={{ width: '40%', padding: 10 }}>
+          <div style={{ direction: 'rtl', fontSize:'x-large' }} dangerouslySetInnerHTML={{ __html: project.description }} />
         </div>
       </div>
 

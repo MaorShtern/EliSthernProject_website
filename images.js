@@ -1,6 +1,6 @@
 export const images = {
     logo: require("./public/images/logo.png"),
-    homePage_image: require("./public/images/homePage_image.jpg"),
+    homePage_image: require("./public/images/homePage_image-2.jpg"),
     Fotter_image: require("./public/images/Fotter_image.jpeg"),
     Industrial_Construction_image: require("./public/images/Industrial_Construction.jpg"),
     Private_Construction_image: require("./public/images/Private_Construction.jpg"),

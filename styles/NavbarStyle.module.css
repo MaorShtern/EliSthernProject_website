@@ -10,7 +10,6 @@
 
 .Navbar_Options{
     display: flex;
-    /* justify-content: space-between; */
     justify-content: right;
     font-size: x-large;
     width: 90%;
@@ -28,11 +27,7 @@
 .menuList {
     list-style-type: none;
     display: flex;
-    
-    /* margin: 0;
-    padding: 0; */
 }
-
 
 .Links{
     text-decoration: none; 
@@ -55,24 +50,27 @@
 }
 
 
-
-.Menu_Options_Container{
-    background-color:rgb(187, 187, 183);
-    text-align: right;
-    /* width: 100%; */
+.UL{
     list-style-type: none;
-    /* margin: 0; */
+    background-color: rgb(170, 169, 169);
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
-.Menu_Options{
+
+.Links_Menu_Options{
+    display: block;
+    text-align: center;
     border-style: solid;
     border-width: 0.2px;
-    background-color: rgb(170, 169, 169);
+    border-color: black;
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
     padding: 10px;
-    font-size: 20px;
 }
 
-
-
+.Links_Menu_Options:hover{
+    color: rgb(49, 160, 215);
+}

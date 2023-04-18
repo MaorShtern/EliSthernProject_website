@@ -8,6 +8,9 @@ export const images = {
         require("./public/images/מבנה חנויות ומשרדים - קרית גת/5.jpg"),
     ],
 
+    logo: require("./public/images/logo.png"),
+
+
     Machining_BeitShan: [
         require("./public/images/מפעל עיבוד שבבי - בית שאן/1.jpg"),
         require("./public/images/מפעל עיבוד שבבי - בית שאן/2.jpg"),

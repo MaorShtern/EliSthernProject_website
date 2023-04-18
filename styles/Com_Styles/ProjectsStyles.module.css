@@ -8,10 +8,10 @@
 .Category_Opstions_List{
     width: 30%;
     display: flex;
-    flex-direction: row;    
     justify-content: space-between;
-    list-style: none;
+    list-style-type: none;
     font-size: x-large;
+    padding: 0;
 }
 
 .Category_Opstion{
@@ -56,6 +56,17 @@
     float: right;
     width: 30%;
     margin-right: 3%;
+    margin-bottom: 3%;
+    background-color: rgb(195, 194, 192);
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.column_small{
+    float: right;
+    width: 70%;
+    margin-right: 15%;
     margin-bottom: 3%;
     background-color: rgb(195, 194, 192);
     border-color: black;

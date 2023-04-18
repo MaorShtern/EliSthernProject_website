@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../../styles/Com_Styles/ProjectsStyles.module.css'
 import Head from 'next/head';
 import Projects_Cards from './cards/Projects_Cards'
-
+import AppContext from '../../AppContext';
 
 
 const projects_Category = [
@@ -31,6 +31,7 @@ export default function Projects({ data }) {
 
     const router = useRouter()
     const [category, setCategory] = useState(projects_Category[0])
+    const size = useContext(AppContext);
 
 
     // console.log(data);
@@ -53,14 +54,16 @@ export default function Projects({ data }) {
                             category === projects_Category[0] ?
                                 data.map((item, index) =>
                                 (
-                                    <div key={index} className={styles.column} >
+                                    <div key={index}
+                                        className={!size.isSmall ? styles.column : styles.column_small} >
                                         <Projects_Cards key={index} data={item} />
                                     </div>
                                 )) :
                                 data.filter((item) => item.category === category.key).map(
                                     (item, index) =>
                                     (
-                                        <div key={index} className={styles.column} >
+                                        <div key={index}
+                                            className={!size.isSmall ? styles.column : styles.column_small} >
                                             <Projects_Cards key={index} data={item} />
                                         </div>
                                     )
@@ -71,6 +74,7 @@ export default function Projects({ data }) {
             </>
         )
     }
+
 
 
 
@@ -88,7 +92,6 @@ export default function Projects({ data }) {
 
                 <div className={styles.Category_Opstions_Con}>
                     <ul className={styles.Category_Opstions_List}>
-
                         {projects_Category.map((item, index) =>
                             <li key={index}>
                                 <button
